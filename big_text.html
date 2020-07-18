@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bigger texts? Here you go...
+        </title>
+        <script type="text/javascript">
+            var Alphabets ={
+                A: ["     AA     ", 
+                    "    AAAA    ", 
+                    "   AA  AA   ", 
+                    "  AAAAAAAA  ", 
+                    " AAA    AAA ", 
+                    "AAA      AAA"],
+
+                B: ["BBBBB    ", 
+                    "BB   BBB ", 
+                    "BBBBBB   ", 
+                    "BB    BB ", 
+                    "BB    BBB", 
+                    "BBBBBBBB "],
+
+                C: ["  CCCCC", 
+                    "CCCC   ", 
+                    "CC     ", 
+                    "CC     ", 
+                    "CCCC   ", 
+                    "  CCCCC"],
+
+                D: ["DDDD    ", 
+                    "DD  DD  ", 
+                    "DD   DD ", 
+                    "DD   DDD", 
+                    "DD  DDD ", 
+                    "DDDDD   "],
+
+                E: ["EEEEEEE", 
+                    "EE     ", 
+                    "EEEEE  ", 
+                    "EE     ", 
+                    "EE     ", 
+                    "EEEEEEE"],
+
+                F: ["FFFFFFF", 
+                    "FF     ", 
+                    "FFFF   ", 
+                    "FF     ", 
+                    "FF     ", 
+                    "FF     "],
+
+                G: ["   GGGGG   ", 
+                    " GGG   GGG ", 
+                    "GGG        ", 
+                    "GG   GGGGGG", 
+                    " GGG    GG ", 
+                    "   GGGGGG  "],
+
+                H: ["HH   HH", 
+                    "HH   HH", 
+                    "HHHHHHH", 
+                    "HH   HH", 
+                    "HH   HH", 
+                    "HH   HH"],
+
+                I: ["IIIIIIII", 
+                    "   II   ", 
+                    "   II   ", 
+                    "   II   ", 
+                    "   II   ", 
+                    "IIIIIIII"],
+
+                J: ["JJJJJJJJ", 
+                    "J   JJJ ", 
+                    "    JJ  ", 
+                    "    JJ  ", 
+                    "J  JJJ  ", 
+                    "JJJJ    "],
+
+                K: ["KK   KK", 
+                    "KK KK  ", 
+                    "KKK    ", 
+                    "KK KK  ", 
+                    "KK  KK ",
+                    "KK   KK"],
+
+                L: ["LL      ",
+                    "LL      ",
+                    "LL      ",
+                    "LL      ",
+                    "LL      ",
+                    "LLLLLLLL"],
+
+                M: ["MM     MM",
+                    "MMM   MMM",
+                    "MM MMM MM",
+                    "MM  M  MM",
+                    "MM     MM",
+                    "MM     MM"],
+
+                N: ["NNN     NN",
+                    "NN N    NN",
+                    "NN  N   NN",
+                    "NN   N  NN",
+                    "NN    N NN",
+                    "NN     NNN"],
+
+                O: ["  OOOOOO  ",
+                    " OO    OO ",
+                    "OO      OO",
+                    "OO      OO",
+                    " OO    OO ",
+                    "  OOOOOO  "],
+
+                P: ["PPPP   ",
+                    "PP  PP ",
+                    "PP  PPP",
+                    "PPPP   ",
+                    "PP     ",
+                    "PP     "],
+
+                Q: ["  QQQQQQ    ",
+                    " QQ    QQ   ",
+                    "QQ Q    QQ  ",
+                    "QQ  QQ  QQ  ",
+                    " QQ   QQQ   ",
+                    "  QQQQQQ QQQ"],
+
+                R: ["RRRR   ",
+                    "RR  RR ",
+                    "RR  RR ",
+                    "RRRR   ",
+                    "RR RR  ",
+                    "RR   RR"],
+
+                S: ["  SSS  ",
+                    "SS   SS",
+                    "SSS    ",
+                    "   SSS ",
+                    "SS   SS",
+                    " SSSSS "],
+
+                T: ["TTTTTTTT",
+                    "T  TT  T",
+                    "   TT   ",
+                    "   TT   ",
+                    "   TT   ",
+                    "   TT   "],
+
+                U: ["UU    UU",
+                    "UU    UU",
+                    "UU    UU",
+                    "UU    UU",
+                    "UUU  UUU",
+                    " UUUUUU "],
+
+                V: ["VV     VV",
+                    "VV     VV",
+                    " VV   VV ",
+                    "  VVVVV  ",
+                    "   VVV   ",
+                    "    V    "],
+
+                W: ["WW     WW",
+                    "WW     WW",
+                    "WW  W  WW",
+                    "WW WWW WW",
+                    "WWW   WWW",
+                    "WW     WW"],
+
+                X: ["XX     XX",
+                    " XXX XXX ",
+                    "   XXX   ",
+                    "   XXX   ",
+                    " XXX XXX ",
+                    "XX     XX"],
+
+                Y: ["YY      YY",
+                    " YYY  YYY ",
+                    "   YYYY   ",
+                    "    YY    ",
+                    "    YY    ",
+                    "    YY    "],
+
+                Z: ["ZZZZZZZZZZ",
+                    "Z     ZZZ ",
+                    "     ZZ   ",
+                    "   ZZ     ",
+                    " ZZZ     Z",
+                    "ZZZZZZZZZZ"],
+
+                '.': ["   ",
+                      "   ",
+                      "   ",
+                      "   ",
+                      "...",
+                      "..."],
+
+                ',': ["   ",
+                      "   ",
+                      "   ",
+                      ",,,",
+                      " ,,",
+                      ",, "],
+
+                ':': ["  ",
+                      "::",
+                      "  ",
+                      "  ",
+                      "::",
+                      "  "],
+
+                ';': ["  ",
+                      ";;",
+                      "  ",
+                      "  ",
+                      ";;",
+                      "; "],
+
+                '"': ['""',
+                      '""',
+                      "  ",
+                      "  ",
+                      "  ",
+                      "  "],
+
+                "'": ["'",
+                      "'",
+                      " ",
+                      " ",
+                      " ",
+                      " "],
+
+                '/': ["     //",
+                      "    // ",
+                      "   //  ",
+                      "  //   ",
+                      " //    ",
+                      "//     "],
+
+                '!': ["!!",
+                      "!!",
+                      "!!",
+                      "!!",
+                      "  ",
+                      "!!"],
+                
+                '#': [" # # ",
+                      "#####",
+                      " # # ",
+                      " # # ",
+                      "#####",
+                      " # # "],
+
+                '?': ["  ???  ",
+                      "???  ??",
+                      "    ?? ",
+                      "   ??  ",
+                      "       ",
+                      "   ??  "],
+
+                '0':[" 0000 ",
+                     "00  00",
+                     "00  00",
+                     "00  00",
+                     "00  00",
+                     " 0000 "],
+
+                '1': ["  111 ",
+                      "11 11 ",
+                      "   11 ",
+                      "   11 ",
+                      "   11 ",
+                      " 11111"],
+
+                '2': ["  222  ",
+                      "22   22",
+                      "    22 ",
+                      "   22  ",
+                      " 22    ",
+                      "2222222"],
+
+                '3': [" 33333 ",
+                      "33   33",
+                      "   333 ",
+                      "     33",
+                      "33   33",
+                      " 33333 "],
+
+                '4': ["    44 ", 
+                      "  4 44 ",
+                      " 4  44 ",
+                      "4444444",
+                      "    44 ",
+                      "    44 "],
+
+                '5': ["5555555",
+                      "55     ",
+                      "55555  ",
+                      "     55",
+                      "55   55",
+                      " 55555 "],
+
+                '6': ["  66666",
+                      "66     ",
+                      "66666  ",
+                      "66   66",
+                      "66   66",
+                      " 66666 "],
+
+                '7': ["7777777", 
+                      "    77 ", 
+                      "   77  ", 
+                      "  77   ", 
+                      " 77    ", 
+                      "77     "],
+
+                '8':[" 8888 ",
+                     "8    8",
+                     " 8888 ",
+                     " 8  8 ",
+                     "8    8",
+                     " 8888 "],
+
+                '9': ["  999 ",
+                      "99  99",
+                      "  9999",
+                      "    99",
+                      "9   99",
+                      " 9999"]
+            };
+        
+            function get_alp_line (ch, i) {
+                return Alphabets[ch][i];
+            }
+
+            function get_word (word) {
+                var k = document.getElementById("krn").value;
+                spc = '';
+
+                for(var i = 0; i < k; i++) {
+                    spc = spc + ' ';
+                }                
+                var wrd = "";
+                for(var i = 0; i < 6; i++) {
+                    wrd = wrd + '```';
+                    for(var j = 0; j < word.length; j++) {
+                        wrd = wrd + Alphabets[word[j]][i];
+                        if (j!=(word.length-1)) {
+                            wrd = wrd + spc;
+                        }
+                    }
+                    wrd = wrd + '```\n';
+                }
+                return wrd;
+            }
+
+            function output (phr) {
+                var n = document.getElementById('gap').value;
+                nwln = '';
+                for(var i = 0; i < n; i++) {
+                    nwln = nwln + '\n';
+                }
+
+                var words = phr.split(' ');
+                var out = '';
+                for(var i = 0; i < words.length; i++) {
+                    out = out + get_word(words[i]) + nwln;
+                }
+                return out;
+            }
+
+            function display_phrase() {
+                var phr = document.getElementById('phr').value.toUpperCase();
+                document.getElementById('target').value = output(phr);
+            }
+
+            
+            
+        </script>
+    </head>
+    <body style = "white-space: pre-wrap; background-color: #000; color: #FFF; font-family: 'Courier New', Courier, monospace;">
+
+        <input type="text", oninput="display_phrase()", name="phrase", id="phr", style="background-color: #222; border-color: #777; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="Enter here:", autofocus>
+        <br>
+        Kerning: <input type="number", oninput="display_phrase()", id="krn", name="kerning", style="background-color: #111; border-color: #444; width: 5em; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="1">
+        Spacing: <input type="number", oninput="display_phrase()", id="gap", name="gap", style="background-color: #111; border-color: #444; width: 5em; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="1">
+        <br>
+        <textarea style="font-family: 'Courier New', Courier, monospace; color: #FFF; background-color: #111; height: 20em; width: 40em ;white-space: pre-wrap;", id='target'>The converted text will appear here</textarea>
+        <h5>Made by Debjit</h5>
+    </body>
+</html>
