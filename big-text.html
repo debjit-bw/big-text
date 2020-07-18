@@ -326,14 +326,14 @@
                       "  9999",
                       "    99",
                       "9   99",
-                      " 9999"]
+                      " 9999 "]
             };
         
             function get_alp_line (ch, i) {
                 return Alphabets[ch][i];
             }
 
-            function get_word (word) {
+            function get_word (word, pad) {
                 var k = document.getElementById("krn").value;
                 spc = '';
 
@@ -342,19 +342,19 @@
                 }                
                 var wrd = "";
                 for(var i = 0; i < 6; i++) {
-                    wrd = wrd + '```';
+                    wrd = wrd + pad;
                     for(var j = 0; j < word.length; j++) {
                         wrd = wrd + Alphabets[word[j]][i];
                         if (j!=(word.length-1)) {
                             wrd = wrd + spc;
                         }
                     }
-                    wrd = wrd + '```\n';
+                    wrd = wrd + pad + '\n';
                 }
                 return wrd;
             }
 
-            function output (phr) {
+            function output (phr, pad) {
                 var n = document.getElementById('gap').value;
                 nwln = '';
                 for(var i = 0; i < n; i++) {
@@ -364,28 +364,34 @@
                 var words = phr.split(' ');
                 var out = '';
                 for(var i = 0; i < words.length; i++) {
-                    out = out + get_word(words[i]) + nwln;
+                    out = out + get_word(words[i], pad) + nwln;
                 }
                 return out;
             }
 
-            function display_phrase() {
+            function display_phrase(pad) {
                 var phr = document.getElementById('phr').value.toUpperCase();
-                document.getElementById('target').value = output(phr);
+                document.getElementById('target').value = output(phr, pad);
             }
 
-            
+            function copy_txt(pad) {
+                display_phrase(pad);
+                var ctxt = document.getElementById('target');
+                ctxt.select();
+                document.execCommand('copy');
+                display_phrase('');
+                alert("Copied to clipboard");
+            }  
             
         </script>
     </head>
-    <body style = "white-space: pre-wrap; background-color: #000; color: #FFF; font-family: 'Courier New', Courier, monospace;">
+    <body style = "white-space: pre-wrap; background-color: #000; color: #FFF; font-family: 'Courier New', Courier, monospace; font-size:0.3cm">
+    <input type="text", oninput="display_phrase('')", name="phrase", id="phr", style="background-color: #222; border-color: #777; font-family: 'Courier New', Courier, monospace; color: #FFF; width: 100%; height:0.7cm; font-size: 0.5cm; white-space: 'pre-wrap'  ", placeholder="Enter here:", autofocus>
 
-        <input type="text", oninput="display_phrase()", name="phrase", id="phr", style="background-color: #222; border-color: #777; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="Enter here:", autofocus>
-        <br>
-        Kerning: <input type="number", oninput="display_phrase()", id="krn", name="kerning", style="background-color: #111; border-color: #444; width: 5em; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="1">
-        Spacing: <input type="number", oninput="display_phrase()", id="gap", name="gap", style="background-color: #111; border-color: #444; width: 5em; font-family: 'Courier New', Courier, monospace; color: #BBB;", value="1">
-        <br>
-        <textarea style="font-family: 'Courier New', Courier, monospace; color: #FFF; background-color: #111; height: 20em; width: 40em ;white-space: pre-wrap;", id='target'>The converted text will appear here</textarea>
-        <h5>Made by Debjit</h5>
+    Kerning: <input type="number", oninput="display_phrase('')", id="krn", name="kerning", style="background-color: #111; border-color: #444; width: 1.2cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.3cm; font-size: 0.3cm;", value="1">    Spacing: <input type="number", oninput="display_phrase('')", id="gap", name="gap", style="background-color: #111; border-color: #444; width: 1.2cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.3cm; font-size: 0.3cm;", value="1">
+
+<button onclick="copy_txt('```')", style="background-color: #222; border-width: 0cm; color: #FFF;"><u>Copy for WhatsApp</u></button>
+<textarea style="font-family: 'Courier New', Courier, monospace; color: #FFF; background-color: #111; border-width: 0.05cm; border-color: #FFF; height: 10cm; width: 100% ;white-space: pre; font-size:0.25cm", id='target', placeholder="The converted text will appear here"></textarea><font style="font-size: 0.3cm;">made by debjit</font>
+
     </body>
 </html>
