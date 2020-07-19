@@ -372,6 +372,8 @@
             function display_phrase(pad) {
                 var phr = document.getElementById('phr').value.toUpperCase();
                 document.getElementById('target').value = output(phr, pad);
+                document.getElementById('btn').style.backgroundColor = '#222';
+                document.getElementById('btn').innerHTML = "<u>Copy for WhatsApp</u>";
             }
 
             function copy_txt(pad) {
@@ -380,18 +382,20 @@
                 ctxt.select();
                 document.execCommand('copy');
                 display_phrase('');
-                alert("Copied to clipboard");
+                document.getElementById('btn').style.backgroundColor = '#090';
+                document.getElementById('btn').innerHTML = "Copied to clipboard";
             }  
             
         </script>
     </head>
-    <body style = "white-space: pre-wrap; background-color: #000; color: #FFF; font-family: 'Courier New', Courier, monospace; font-size:0.3cm">
-    <input type="text", oninput="display_phrase('')", name="phrase", id="phr", style="background-color: #222; border-color: #777; font-family: 'Courier New', Courier, monospace; color: #FFF; width: 100%; height:0.7cm; font-size: 0.5cm; white-space: 'pre-wrap'  ", placeholder="Enter here:", autofocus>
+    <center><body style = "white-space: pre-wrap; background-color: #000; color: #FFF; font-family: 'Courier New', Courier, monospace; font-size:0.2cm"><input type="text", oninput="display_phrase('')", name="phrase", id="phr", style="background-color: #222; border-color: #777; font-family: 'Courier New', Courier, monospace; color: #FFF; width: 70%; height:1cm; font-size: 1cm; white-space: 'pre-wrap'  ", placeholder="Enter here:", autofocus>
 
-    Kerning: <input type="number", oninput="display_phrase('')", id="krn", name="kerning", style="background-color: #111; border-color: #444; width: 1.2cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.3cm; font-size: 0.3cm;", value="1">    Spacing: <input type="number", oninput="display_phrase('')", id="gap", name="gap", style="background-color: #111; border-color: #444; width: 1.2cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.3cm; font-size: 0.3cm;", value="1">
 
-<button onclick="copy_txt('```')", style="background-color: #222; border-width: 0cm; color: #FFF;"><u>Copy for WhatsApp</u></button>
-<textarea style="font-family: 'Courier New', Courier, monospace; color: #FFF; background-color: #111; border-width: 0.05cm; border-color: #FFF; height: 10cm; width: 100% ;white-space: pre; font-size:0.25cm", id='target', placeholder="The converted text will appear here"></textarea><font style="font-size: 0.3cm;">made by debjit</font>
+    <font style = "font-size: 0.7cm;">Kerning: <input type="number", oninput="display_phrase('')", id="krn", name="kerning", style="background-color: #111; border-color: #999; width: 5cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.7cm; font-size: 0.8cm;", value="1">    Spacing: <input type="number", oninput="display_phrase('')", id="gap", name="gap", style="background-color: #111; border-color: #999; width: 5cm; font-family: 'Courier New', Courier, monospace; color: #CCC; height: 0.7cm; font-size: 0.8cm;", value="1"></font>
+
+<button id='btn', onclick="copy_txt('```')", style="background-color: #222; border-width: 0.04cm; border-color:#FFF; color: #FFF; height:1.5cm; width: 60%; font-size:0.5cm;"><u>Copy for WhatsApp</u></button>
+
+<textarea style="font-family: 'Courier New', Courier, monospace; color: #FFF; background-color: #111; border-width: 0.05cm; border-color: #FFF; height: 11.5cm; width: 70% ;white-space: pre; font-size:0.2cm", id='target', placeholder="The converted text will appear here"></textarea></center><font style="font-size: 0.4cm; color:#FFF">made by debjit</font>
 
     </body>
 </html>
